@@ -1174,9 +1174,8 @@
 					// so we have our own function we can call on all those events, the **filterElements** function, and 
 					// let that function do all the hard work.
 					
-					plugin.filterElements($that, options);
-					
-					$that.find('.jkit-filter').on( 'change click', function(){
+					$that.find('.jkit-filter').on( 'change click input', function(){
+						if (options.loader !== undefined) $(options.loader).show();
 						plugin.triggerEvent('clicked', $that, options);
 						plugin.filterElements($that, options);
 					});
@@ -3357,6 +3356,10 @@
 				
 				var $current = $(this);
 				
+				if (options.by == 'text'){
+					var currentText = $current.text().toLowerCase();
+				}
+				
 				if (selections.length > 0){
 					
 					var found = [];
@@ -3367,7 +3370,7 @@
 								found.push(v);
 							}
 						} else if (options.by == 'text'){
-							if ($current.text().toLowerCase().indexOf(v.toLowerCase()) > -1){
+							if (currentText.indexOf(v.toLowerCase()) > -1){
 								found.push(v);
 							}
 						}
@@ -3386,6 +3389,7 @@
 			});
 			
 			setTimeout( function(){
+				if (options.loader !== undefined) $(options.loader).hide();
 				plugin.triggerEvent('complete', $el, options);
 			}, options.speed);
 		

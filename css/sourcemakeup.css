@@ -97,6 +97,15 @@ hr {
 	border: 1px #bbd17c solid;
 	width: 100px;
 }
+#spinner {
+	position: fixed;
+	left: 555px;
+	top: 12px;
+	width: 28px;
+	height: 28px;
+	z-index: 100;
+	display: none;
+}
 table.container {
 	width: 100%;
 }

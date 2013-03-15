@@ -24,10 +24,12 @@
 <body>
 	
 	<div id="options" data-jkit="[tooltip:text=Show compiler instructions?]"><input type="checkbox" id="showinstructions" value="1"></div>
-	<div id="search" data-jkit="[filter:global=yes;by=text;affected=tr.docu]"><input class="jkit-filter" placeholder="search ..." type="text" value=""></div>
+	<div id="search" data-jkit="[filter:global=yes;by=text;affected=tr.docu;loader=#spinner]"><input class="jkit-filter" placeholder="search ..." type="text" value=""></div>
 	<div id="overview" data-jkit="[summary:what=headers;linked=yes;from=table.container;scope=all;style=select;indent=yes]"></div>
 	
 	<?php echo $output; ?>
+	
+	<div id="spinner"><img src="imgs/spinner.gif"></div>
 	
 </body>
 </html>
