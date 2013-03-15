@@ -1,0 +1,382 @@
+body {
+	color:#252519;
+	font-family:'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+	font-size:15px;
+	line-height:22px;
+	margin: 0px;
+	padding: 0px;
+}
+a {
+  color: #65bae2;
+}
+  a:visited {
+    color: #459ad2;
+  }
+p {
+  margin: 0 0 15px 0;
+}
+blockquote {
+	color: #9bb15c;
+	font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px 0 15px 0;
+}
+h4 {
+	color: #333;
+	font-size: 1.15em;
+}
+h5 {
+	color: #555;
+	font-size: 1.13em;
+}
+h6 {
+	color: #777;
+	font-size: 1.11em;
+}
+h1 {
+	margin-top: 10px;
+	color: #c8285b;
+}
+hr {
+    border: 0 none;
+    border-top: 1px solid #e5e5ee;
+    height: 1px;
+    margin: 20px 0;
+}
+#options {
+	position: fixed;
+	right: 9px;
+	top: 7px;
+	border-top: 0px;
+	padding: 2px;
+	padding-bottom: 4px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 26px;
+	background: #f9fbfb;
+	color: #65bae2;
+	border-radius: 3px;
+	border: 1px #bbd17c solid;
+}
+#overview {
+	position: fixed;
+	right: 159px;
+	top: 0px;
+	border-top: 0px;
+	padding: 7px; 
+}
+#overview select {
+	background: #f9fbfb;
+	color: #65bae2;
+	padding: 5px;
+	padding-left: 12px;
+	height: 34px;
+	font-size: 13px;
+	line-height: 140%;
+	border-radius: 3px;
+	border: 1px #bbd17c solid;
+	-webkit-appearance: none;
+}
+#search {
+	position: fixed;
+	right: 37px;
+	top: 0px;
+	border-top: 0px;
+	padding: 7px; 
+}
+#search input {
+	background: #f9fbfb;
+	color: #65bae2;
+	padding: 5px;
+	padding-left: 12px;
+	height: 22px;
+	font-size: 13px;
+	line-height: 140%;
+	border-radius: 3px;
+	border: 1px #bbd17c solid;
+	width: 100px;
+}
+table.container {
+	width: 100%;
+}
+table.container td.comment, table.container th.comment {
+	background-color:#f9fbfb;
+	max-width:425px;
+	min-height:5px;
+	min-width:425px;
+	overflow-x:hidden;
+	padding:14px 25px 1px 25px;
+	text-align:left;
+	vertical-align:top;
+	border-bottom: 1px #ededed dotted;
+}
+table.container td.code, table.container th.code {
+	background-color:#fff;
+	border-left-color:#eee;
+	border-left-style:solid;
+	border-left-width:1px;
+	padding: 16px 15px 16px 18px;
+	vertical-align:top;
+	width:100%;
+	border-bottom: 1px #efefef dotted;
+}
+table.container th.comment {
+	text-transform: uppercase;
+	padding:14px 28px 12px 25px;
+	color: #999;
+	border-bottom: 1px #e8e8e8 solid;
+	font-weight: normal;
+	font-size: 11px;
+	text-align: right;
+}
+#files {
+	position: absolute;
+	top: 16px;
+	left: 23px;
+	background: transparent;
+	color: #999;
+	font-size: 11px;
+	border: none;
+	-webkit-appearance: none;
+}
+table.container th.code {
+	text-transform: uppercase;
+	padding:14px 14px 12px 25px;
+	text-align:left;
+	vertical-align:baseline;
+	color: #999;
+	border-bottom: 1px #eee solid;
+	font-size: 11px;
+	font-weight: normal;
+}
+table.container td.instruction {
+	font-family: Arial, Helvetica, sans;
+	color: #bbb;
+	font-size: 9px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 0px;
+	padding-top: 1px;
+	padding-left: 10px;
+	border-bottom: 1px #f2f2f2 solid;
+}
+table.container td.instruction.code {
+	background: #f9fbfb;
+}
+table.container td.instruction.code img {
+	vertical-align: -20%;
+}
+span.itype {
+	color: #9E6464;
+}
+span.iopt {
+	color: #64889E;
+}
+pre, tt, code {
+	font-family:Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+	font-size:12px;
+	line-height:18px;
+	margin:0;
+	padding:0;
+}
+pre.linenumbers {
+	float: left;
+	width: 40px;
+	color: #ddd;
+	margin-left: 0px;
+}
+
+table.container td.comment pre {
+	padding-top: 4px;
+	padding-bottom: 20px;
+	color: #E01B6A;
+}
+
+/* Hemisu Light */
+/* Original theme - http://noahfrederick.com/vim-color-scheme-hemisu/ */
+/* Pretty printing styles. Used with prettify.js. */
+/* SPAN elements with the classes below are added by prettyprint. */
+/* plain text */
+.pln {
+  color: #111111;
+}
+
+@media screen {
+  /* string content */
+  .str {
+    color: #739200;
+  }
+
+  /* a keyword */
+  .kwd {
+    color: #739200;
+  }
+
+  /* a comment */
+  .com {
+    color: #999999;
+  }
+
+  /* a type name */
+  .typ {
+    color: #ff0055;
+  }
+
+  /* a literal value */
+  .lit {
+    color: #538192;
+  }
+
+  /* punctuation */
+  .pun {
+    color: #111111;
+  }
+
+  /* lisp open bracket */
+  .opn {
+    color: #111111;
+  }
+
+  /* lisp close bracket */
+  .clo {
+    color: #111111;
+  }
+
+  /* a markup tag name */
+  .tag {
+    color: #111111;
+  }
+
+  /* a markup attribute name */
+  .atn {
+    color: #739200;
+  }
+
+  /* a markup attribute value */
+  .atv {
+    color: #ff0055;
+  }
+
+  /* a declaration */
+  .dec {
+    color: #111111;
+  }
+
+  /* a variable name */
+  .var {
+    color: #111111;
+  }
+
+  /* a function name */
+  .fun {
+    color: #538192;
+  }
+}
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+  .str {
+    color: #006600;
+  }
+
+  .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+
+  .com {
+    color: #600;
+    font-style: italic;
+  }
+
+  .typ {
+    color: #404;
+    font-weight: bold;
+  }
+
+  .lit {
+    color: #004444;
+  }
+
+  .pun, .opn, .clo {
+    color: #444400;
+  }
+
+  .tag {
+    color: #006;
+    font-weight: bold;
+  }
+
+  .atn {
+    color: #440044;
+  }
+
+  .atv {
+    color: #006600;
+  }
+}
+/* Style */
+pre.prettyprint {
+  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* IE indents via margin-left */
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8,
+li.L9 {
+  /* */
+}
+
+/* Alternate shading for lines */
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {
+  /* */
+}
+
+
+
+
+
+div#jkit-tooltip {
+	padding: 3px;
+	padding-left: 7px;
+	padding-right: 7px;
+	position: fixed;
+	font-family: Arial, Helvetica, sans;
+	font-size: 12px;
+}
+
+.mytooltip {
+	background: #333;
+	color: #fff;
+	padding: 6px;
+	padding-bottom: 5px;
+	
+	opacity: 0.9;
+	
+	border: 1px #E01B49 solid;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	-webkit-box-shadow:0 0 5px #aaa; 
+	-moz-box-shadow: 0 0 5px #aaa; 
+	box-shadow:0 0 5px #aaa;
+}
