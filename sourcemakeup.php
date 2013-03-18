@@ -13,8 +13,8 @@
 	// Comments for sourceMakeup should be written in Markdown. This way sourceMakeup can correctly
 	// and beautifully format the code and add a navigation menu linked to the different parts of your code.
 	//
-	// - Version: `0.5`
-	// - Release date: `14. 3. 2013`
+	// - Version: `0.6`
+	// - Release date: `18. 3. 2013`
 	// - [Documentation & Demos](http://jquery-jkit.com/sourcemakeup/)
 	// - [Download](https://github.com/FrediBach/sourceMakeup/archive/master.zip)
 	//
@@ -46,7 +46,7 @@
 	);
 	$extensions = 'js,php,css';
 	$filter = '.min.js';
-	$dev = true;
+	$dev = false;
 
 	// ## The Source
 
