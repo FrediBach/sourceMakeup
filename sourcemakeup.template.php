@@ -12,7 +12,7 @@
 
 	<script src="js/jquery-1.9.1.min.js"></script>
 	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.jkit.1.1.28.min.js"></script>
+	<script src="js/jquery.jkit.1.1.29.min.js"></script>
 	<script src="js/sourcemakeup.js"></script>
 
 	<script type="text/javascript" src="libs/google-code-prettify/prettify.js"></script>
@@ -27,7 +27,29 @@
 	<div id="search" data-jkit="[filter:global=yes;by=text;affected=tr.docu;loader=#spinner]"><input class="jkit-filter" placeholder="search ..." type="text" value=""></div>
 	<div id="overview" data-jkit="[summary:what=headers;linked=yes;from=table.container;scope=all;style=select;indent=yes]"></div>
 	
-	<?php echo $output; ?>
+	<table class="container" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr>
+				<th class="comment">
+					<select id="files">
+					<?php foreach($files as $f) : ?>
+						<?php if(conditions) { ?>
+							<option selected><?=$f?></option>
+						<?php } else { ?>
+							<option><?=$f?></option>
+						<?php } ?>
+					<?php endforeach; ?>
+					</select>Documentation
+				</th>
+				<th class="code">
+					Code
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?=$output?>
+		</tbody>
+	</table>
 	
 	<div id="spinner"><img src="imgs/spinner.gif"></div>
 	

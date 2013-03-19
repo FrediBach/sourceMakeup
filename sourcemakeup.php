@@ -13,8 +13,8 @@
 	// Comments for sourceMakeup should be written in Markdown. This way sourceMakeup can correctly
 	// and beautifully format the code and add a navigation menu linked to the different parts of your code.
 	//
-	// - Version: `0.6`
-	// - Release date: `18. 3. 2013`
+	// - Version: `0.7`
+	// - Release date: `19. 3. 2013`
 	// - [Documentation & Demos](http://jquery-jkit.com/sourcemakeup/)
 	// - [Download](https://github.com/FrediBach/sourceMakeup/archive/master.zip)
 	//
@@ -40,7 +40,7 @@
 	$file = 'sourcemakeup.php';
 	$files = array(
 				'sourcemakeup.php',
-				'js/jquery.jkit.1.1.28.js',
+				'js/jquery.jkit.1.1.29.js',
 				'js/sourcemakeup.js',
 				'css/sourcemakeup.css'
 	);
@@ -142,24 +142,10 @@
 			$blocks[0]['code'] = '';
 		}
 		
-		// We have now all we need to construct the table that contains all of our code. The table 
+		// We have now all we need to construct the table tbody content that contains all of our code. The table 
 		// has two columns, the first contains all the comments and the second one contains all the code.
 	
 		$output = '';
-		
-		// First contruct the table header:
-		
-		$output .= '<table class="container" cellpadding="0" cellspacing="0">';
-		$output .= '<thead><th class="comment"><select id="files">';
-		foreach($files as $f){
-			if ($f == $file){
-				$output .= '<option selected>'.$f.'</option>';
-			} else {
-				$output .= '<option>'.$f.'</option>';
-			}
-		}
-		$output .= '</select>Documentation</th><th class="code">Code</th>';
-		$output .= '</thead><tbody>';
 		
 		// Loop through all blocks and construct the rows of our table:
 	
@@ -235,8 +221,6 @@
 				
 			}
 		}
-	
-		$output .= '</tbody></table>';
 		
 		// Now as we created our output, we save it in a cache for later use:
 		
