@@ -97,7 +97,7 @@
 		
 		// Load the file and create an array of all lines:
 		
-		$data = file_get_contents($file);
+		$data = file_get_contents($dir.$file);
 		$lines = explode("\n", $data);
 		
 		// Create some variables we need later:
@@ -106,6 +106,7 @@
 		$iscomment = false;
 		$currentblock = 0;
 		$linenumber = 0;
+		$blockCommentMode = false;
 		
 		// Step through all lines and combine them into codeblocks. Each codeblock can have following contents:
 		//
