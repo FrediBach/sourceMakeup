@@ -155,7 +155,6 @@
 			// Check for comment tags or comment block mode
 		
 			if (substr(trim($line),0,2) == '//' || $blockCommentMode){		
-			if (substr(trim($line),0,2) == '//'){
 				if (!$iscomment){
 					$currentblock++;
 				}
