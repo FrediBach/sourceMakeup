@@ -125,7 +125,7 @@
 			// Check for a comment block mode at the first character.  It will
 			// not catch a comment trailing text.
 
-			$startBlockMode = (substr(trim($line),-2,2) == '/*');
+			$startBlockCommentMode = (substr(trim($line),-2,2) == '/*');
 			
 			// Check for a comment block mode at the end of the line.  It will
 			// not catch a terminating comment followed by code.
