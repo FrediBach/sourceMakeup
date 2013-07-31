@@ -33,7 +33,7 @@
 				<th class="comment">
 					<select id="files">
 					<?php foreach($files as $f) : ?>
-						<?php if(conditions) { ?>
+						<?php if($_GET['file'] == $f) { ?>
 							<option selected><?=$f?></option>
 						<?php } else { ?>
 							<option><?=$f?></option>
