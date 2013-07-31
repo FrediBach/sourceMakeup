@@ -47,6 +47,9 @@
 	$extensions = 'js,php,css';
 	$filter = '.min.js';
 	$dev = false;
+	
+	$trimCommentBlockLen = 2;
+	$trimInlineCommentLen = 3;
 
 	// ## The Source
 
@@ -107,6 +110,7 @@
 		$currentblock = 0;
 		$linenumber = 0;
 		$blockCommentMode = false;
+		$trimCommentLength = 0;
 		
 		// Step through all lines and combine them into codeblocks. Each codeblock can have following contents:
 		//
@@ -117,12 +121,50 @@
 		foreach($lines as $line){
 		
 			$linenumber++;
+
+			// Check for a comment block mode at the first character.  It will
+			// not catch a comment trailing text.
+
+			$startBlockMode = (substr(trim($line),-2,2) == '/*');
+			
+			// Check for a comment block mode at the end of the line.  It will
+			// not catch a terminating comment followed by code.
+
+			$endBlockCommentMode = (substr(trim($line),-2,2) == '*/');
+
+			// If the line enters and exists a comment block mode then replace,
+			// replace with a regular comment.
+			// If the line enters with a block comment, set the mode
+
+			if ($startBlockCommentMode){
+				if ($endBlockCommentMode){
+					$line = '// '.substr(trim($line),2);
+				} else{
+					$blockCommentMode = true;
+				}
+			}
+
+			// If the line exists a comment block mode at the end of the line,
+			// then set single line tags and toggle blockCommentMode off.
+
+			if ($endBlockCommentMode) {
+				$line = '// '.substr(trim($line),0,-2);
+				$blockCommentMode = false;
+			}
+
+			// Check for comment tags or comment block mode
 		
+			if (substr(trim($line),0,2) == '//' || $blockCommentMode){		
 			if (substr(trim($line),0,2) == '//'){
 				if (!$iscomment){
 					$currentblock++;
 				}
-				$blocks[$currentblock]['comment'] .= "\n".substr(trim($line),3);
+				
+				$trimCommentLength = ($blockCommentMode)
+						   ? $trimCommentBlockLen
+						   : $trimInlineCommentLen;
+
+				$blocks[$currentblock]['comment'] .= "\n".trim(substr(trim($line), $trimCommentLength));
 				$blocks[$currentblock]['code'] .= "";
 				$iscomment = true;
 				if (substr(trim(substr(trim($line),3)),0,3) == '{!}'){
